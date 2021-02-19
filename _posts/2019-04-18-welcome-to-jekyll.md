@@ -1,6 +1,7 @@
 ---
-title: "Welcome to Jekyll!"
+title: "Welcome to this blob"
 date: 2019-04-18T15:34:30-04:00
+last_modified_at: 2021-02-19T10:00:00-03:00
 categories:
   - blog
 tags:
@@ -8,11 +9,8 @@ tags:
   - update
 ---
 
-You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+You'll find this post in your `_posts` directory. This is a work in progess blog so if you got any doubt please drop me a line on the channles of the footer
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
 
 ```ruby
 def print_hi(name)
