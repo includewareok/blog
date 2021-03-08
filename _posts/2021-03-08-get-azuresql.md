@@ -45,6 +45,6 @@ Una vez que tenemos esto definido podemos ir a obtener nuestros datos, pero ante
 $size = @{label="Size(GB)";expression={$_.MaxSizeBytes/1GB}}
 Get-AzSqlDatabase -ServerName $serverName -DatabaseName $dbName -ResourceGroupName $resourceGroupName | select Capacity, Edition, $size, MaxSizeBytes
 ```
-![output](/../assets/post/2021-03-08-get-azuresql-1.png)
+![output](/posts/2021-03-08-get-azuresql-1.png)
 
 En este caso es una base de datos de ejemplo con 5DTU y 2 GB de tamaño máximo. Lamentablemente al momento de escribir este manual, no hay una forma facil de obtener cuanto de eso está usado sin tener que consultar al SQL mismo
