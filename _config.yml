@@ -13,12 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Felipe Schneider blog
+title: El blog de Felipe Schneider 
 email: felipes (a) gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Experienced Infrastructure Engineer with a demonstrated history of working in multinational information technology companies. 
-  Leadership and Problem-Solving skills. The main focus on Azure SQL solutions but also skilled in Microsoft infrastructure solutions, 
-  Virtualization, Security, and Powershell. I think teamwork and good communication are the basis of any successful team.
+  SQL Server DBA trabajando en Pyxis 
+  Trabajo en SQL Server desde la versión 2005
 twitter_username: felipes88
 github_username: felipeschneider88
 minimal_mistakes_skin: default
