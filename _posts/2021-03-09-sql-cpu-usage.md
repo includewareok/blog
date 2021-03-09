@@ -27,7 +27,7 @@ Internamente el ciclo de vida de una consulta en SQL Server tiene 3 estados posi
 
 Una consulta solo puede estar en el estado Running mientras tienga trabajo que pueda ejecutar, en el momento en que la misma tiene que esperar por un recurso (páginas, locks, red, etc) que no están disponibles, la consulta pasa al estado Suspended. La consulta tiene que esperar en este estado hasta que el recurso solicitado este disponible. Luego de esto la consulta es movida al estado Runnable. La consulta se va a quedar en este estado mientras espera que un núcleo este libre y finalmente la consulta vuelve al estado Running. Todas estos cambios de estados son registrados y monitoreados mediante los waits stats internamente.
 
-**:information_source: ℹ️** Como SQL Server está contruido con un gestión de procesos llamado [Cooperative Scheduling](https://www.sqlpassion.at/archive/2015/04/13/introduction-to-wait-statistics-in-sql-server/) (SQL Server bypassea el agendado preventivo del SO y agenda sus hilos el mismo) y tiene definido su Quantum (tiempo máximo de una consulta en un procesador,  en un procesador de 2Ghz son 1 x 10 a las 6 instrucciones por  milisegundo) en 4ms. Después de ese tiempo, la consulta cede voluntariamente el CPU y se cambia al estado Runnable. Este tipo de comportamientos es registrado por SQL Server como un tipo de espera SOS_SCHEDULER. Por más información se puede [leer este](https://sqlperformance.com/2014/02/sql-performance/knee-jerk-waits-sos-scheduler-yield) o [este articulo](https://www.sqlskills.com/help/waits/sos_scheduler_yield/) de Paul Randall.
+**:information_source:** Como SQL Server está contruido con un gestión de procesos llamado [Cooperative Scheduling](https://www.sqlpassion.at/archive/2015/04/13/introduction-to-wait-statistics-in-sql-server/) (SQL Server bypassea el agendado preventivo del SO y agenda sus hilos el mismo) y tiene definido su Quantum (tiempo máximo de una consulta en un procesador,  en un procesador de 2Ghz son 1 x 10 a las 6 instrucciones por  milisegundo) en 4ms. Después de ese tiempo, la consulta cede voluntariamente el CPU y se cambia al estado Runnable. Este tipo de comportamientos es registrado por SQL Server como un tipo de espera SOS_SCHEDULER. Por más información se puede [leer este](https://sqlperformance.com/2014/02/sql-performance/knee-jerk-waits-sos-scheduler-yield) o [este articulo](https://www.sqlskills.com/help/waits/sos_scheduler_yield/) de Paul Randall.
 {: .notice--info}
 
 
@@ -50,11 +50,12 @@ La consulta de Mauro Necesita un recurso y se pasa a esperar:
 
 ![Imagen-006](/assets/images/como-sql-gestiona-el-cpu-006.png)
 
-**Info Notice:** La consulta de Mauro genero un aumento en las estadisticas de espera waits statitics. SQL Server puede esperar por diferentes tipos de cosas como son
+{% capture notice-2 %}
+:information_source: La consulta de Mauro genero un aumento en las estadisticas de espera waits statitics. SQL Server puede esperar por diferentes tipos de cosas como son: 
 * Recursos: CPU, memoria, almacenanmiento, red, bloqueos, latches
 * Cosas fuer de SQL Server: OLEDB, Objetos COM, CLR
 * Tareas del sistema: Lazy writer, trace, full text search
-{: .notice--info}
+{% endcapture %}
 
 
 Llegan otras consultas y la consulta de Mauro obtiene el recurso y vuelve a la lista de runnable:
