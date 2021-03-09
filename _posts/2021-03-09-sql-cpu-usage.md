@@ -50,12 +50,11 @@ La consulta de Mauro Necesita un recurso y se pasa a esperar:
 
 ![Imagen-006](/assets/images/como-sql-gestiona-el-cpu-006.png)
 
-{% capture notice-2 %}
-:information_source: La consulta de Mauro genero un aumento en las estadisticas de espera waits statitics. SQL Server puede esperar por diferentes tipos de cosas como son: 
+**:information_source:** La consulta de Mauro genero un aumento en las estadisticas de espera waits statitics. SQL Server puede esperar por diferentes tipos de cosas como son: 
 * Recursos: CPU, memoria, almacenanmiento, red, bloqueos, latches
 * Cosas fuer de SQL Server: OLEDB, Objetos COM, CLR
 * Tareas del sistema: Lazy writer, trace, full text search
-{% endcapture %}
+{: .notice--info}
 
 
 Llegan otras consultas y la consulta de Mauro obtiene el recurso y vuelve a la lista de runnable:
