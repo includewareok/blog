@@ -16,4 +16,6 @@ tags:
 
 ## Introducción
 
-Esto es un WIP y se actualizará pronto
+**:information_source:** 
+Esto es un WIP y se actualizará pronto.
+{: .notice}

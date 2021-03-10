@@ -31,7 +31,7 @@ Cada base de datos de SQL Server cuenta con varias tablas internas del sistema, 
 
 Vamos a ver los tipos de indices de una base de datos, para eso ejecutamos la siguiente query:
 
-```SQL
+```sql
 USE  NOMBREDELADB --Cambiar por la DB que se quiera comprobar
 GO;
 SELECT DISTINCT(type_desc) 
@@ -53,7 +53,7 @@ Cuando una tabla no cuenta con un indice CLUSTERED los datos están dispersos de
 ![Imagen-001](/assets/images/2021-03-01-index-status-001.png)
 [Imagen obtenida de la documentación de MS](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-index-design-guide?view=sql-server-ver15#clustered-index-architecture)
 
-```SQL
+```sql
 --Obotener los nombres de las tablas que no tiene indices clustered
 USE  NOMBREDELADB --Cambiar por la DB que se quiera comprobar
 GO;
@@ -73,7 +73,7 @@ El tema de los indices al ser estructuras lógicas de árboles binarios de búsq
 
 Con este [script de Glen Barry](https://www.sqlskills.com/blogs/glenn/category/dmv-queries/) podemos obtener el estado de  fragemtanción los indices y validar que tan correcta es nuestra estrategía de mantenimiento de indices:
 
-```SQL
+```sql
 -- Get fragmentation info for all indexes above a certain size in the current database  (Query 60) (Index Fragmentation)
 -- Note: This query could take some time on a very large database
 USE  NOMBREDELADB --Cambiar por la DB que se quiera comprobar
@@ -98,7 +98,7 @@ ORDER BY ps.avg_fragmentation_in_percent DESC OPTION (RECOMPILE);
 Del mundo de datos a fijarnos los que más interesan son:
 * Schema Name, Objet Name, Index Name para identiifcar el objeto en particular de forma rapida.
 * El tipo para saber que tipo de indice es. Por ejemplo en el caso de los HEAP no es posible corregir la fragemtanción, es necesarió crear un CLUSTERED index para solucionar el problema.
-* El % de fragmetación del indice, como regla general 0 a 10% no hay mucho problema, de 11 a 35 % puede verse degradada la perofmrnace y se sugiere hacer un rebuild del mismo, más ded 35 % el indice no es efectivo y es necesario hacer un rebuild o reorganize del mismo.
+* El % de fragmetación del indice, como regla general 0 a 10% no hay mucho problema, de 11 a 35 % puede verse degradada la perofmrnace y se sugiere hacer un rebuild del mismo, más de 35 % el indice no es efectivo y es necesario hacer un rebuild o reorganize del mismo.
 * page_count y fragmentation_count nos dicen de que volumen de datos estamos hablando, por ejemplo:
   * para el primer indice load_items_co.., que es una tabla HEAP,el tamaño de a tabla es de 590MB y en caso de hacer consultas en esta tabla (SELECT, UPDATE, DELETE) SQL Server a a necesitar todos los 590MB desde disco (generando I/Os) para poder realizar la consulta en cuestión
   * Para el índice load_item_au…, de tipo NONCLUSTERED, vemos que el tamaño es de 185MB
@@ -110,7 +110,8 @@ Para corregir la fragmentación hay 3 posibles caminos
 ![Imagen-003](/assets/images/2021-03-01-index-status-003.png)
 * Crear un plan de mantenimiento desde el Managment studio usando los objetos nativos de SQL Server, la desventaja de este camino es que  no tiene inteligencia, no usa el estado de los indices y en general va por todos o los que se le especifique, haciendo que sea o muy intensivo a nivel del sistema o tener que estar constantemente adaptandolo para tener en cuenta los nuevos indices con altos indices de fragmentación.
 * Usar el [scipt de Ola Hallengren](https://ola.hallengren.com/) para hacer un mantenimiento inteligente, por ejemplo:
-```SQL
+
+```sql
 EXECUTE dbo.IndexOptimize
 @Databases = 'USER_DATABASES',
 @FragmentationLow = NULL,
