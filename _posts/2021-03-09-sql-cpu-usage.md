@@ -12,6 +12,7 @@ tags:
   - standard
 ---
 
+![visitors](https://visitor-badge.glitch.me/badge?page_id=includewareok.blog.2021-03-09-sql-cpu-usage")
 En el campo de la computación existe la llamada jerarquias de memorias. Los tipos de memoria más rapido son los registros pero son muy costosos. Por eso se deben gestionar de la forma más optima:
 
 Esto junto a la capacidad de computo, hace que el CPU sea el recurso más valioso y rápido y por lo tanto el que se debe aprovechas al máximo. Desde la introducción de los sistemas multi proceso y multi usuario, los SO deben organizar de la forma más efectiva posible el uso de ellos. Debido a que SQL Server es un RDBMS, uno de sus componentes se encarga de eso. Se llama internamente SQL Scheduler.

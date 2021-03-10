@@ -11,6 +11,7 @@ categories:
   - automatizar
 ---
 
+![visitors](https://visitor-badge.glitch.me/badge?page_id=includewareok.blog.2021-03-10-email-signature")
 
 # Introducción
 
