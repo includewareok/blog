@@ -65,7 +65,7 @@ Los correos de Office365 son por defecto de contenido HTML, por lo tanto, tenemo
 ![Imagen-008](/assets/images/2021-03/008.png)
 
 
-```HTML
+```html
 <table border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin-left:5.4pt;">
    <tbody>
       <tr>
