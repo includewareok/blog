@@ -1,6 +1,6 @@
 ---
 title: Como automatizar firmas de correo en Office365
-permalink: /firma-corre
+permalink: /firma-correo
 modified: 2021-03-10
 comments: true
 categories:
@@ -60,7 +60,7 @@ Por último tenemos que aclarar cual es la acción que queremos que se ejecute u
 
 ![Imagen-007](/assets/images/2021-03/007.png)
 
-Los correos de Office365 son por defecto de contenido HTML, por lo tanto, tenemos que crear un objeto (en nuestro caso una tabla) que contenga los datos de la firma. Un dato interesante que me encontré Armando esta POC es que existen un set de variables relacionadas con el usuario que está enviado el correo. Por lo tanto, podemos acceder a datos de dicha persona como por ejemplo %%DisplayName%%, todos estos datos son ni más ni menos que atributos del Azure AD, así que si tenemos bien configurados nuestros usuarios en el AD, podemos fácilmente tener una firma linda. Acá les paso un ejemplo con una tabla para mostrar mi firma. La misma en los correos salientes se ve así (no tuve tiempo de jugar con el tamaño de la foto ya que no soy un fanático de HTML:
+Los correos de Office365 son por defecto de contenido HTML, por lo tanto, tenemos que crear un objeto (en nuestro caso una tabla) que contenga los datos de la firma. Un dato interesante que me encontré Armando esta POC es que existen un set de variables relacionadas con el usuario que está enviado el correo. Por lo tanto, podemos acceder a datos de dicha persona como por ejemplo **%%DisplayName%%**, todos estos datos son ni más ni menos que atributos del Azure AD, así que si tenemos bien configurados nuestros usuarios en el AD, podemos fácilmente tener una firma linda. Acá les paso un ejemplo con una tabla para mostrar mi firma. La misma en los correos salientes se ve así (no tuve tiempo de jugar con el tamaño de la foto ya que no soy un fanático de HTML:
 
 ![Imagen-008](/assets/images/2021-03/008.png)
 
