@@ -1,6 +1,7 @@
 ---
 title: "¿Cómo obtener datos de nuestro SQL?"
 excerpt_separator: "<!--more-->"
+classes: wide
 categories:
   - Blog
   - SQL

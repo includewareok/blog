@@ -3,6 +3,7 @@ title: ¿Cómo automatizar firmas de correo en Office365?
 excerpt_separator: "<!--more-->"
 permalink: /firma-correo
 modified: 2021-03-10
+classes: wide
 comments: true
 categories:
   - Blog

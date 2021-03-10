@@ -3,6 +3,7 @@ title: "Analizando el estado de los índices"
 excerpt_separator: "<!--more-->"
 modified: 2021-03-09
 permalink: /index-status
+classes: wide
 categories:
   - Blog
   - SQL
