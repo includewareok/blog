@@ -11,6 +11,8 @@ tags:
   - standard
 ---
 
+![visitors](https://visitor-badge.glitch.me/badge?page_id=includewareok.blog.2021-03-08-get-azuresql")
+
 Hace un tiempo escribí como actualizar las reglas del firewall del Azure SQL en [el blog de Victor](https://blog.victorsilva.com.uy/powershell-firewall-azure-sql/). En esta ocación vamos a ver como obtener algunos datos más interesantes.
 
 <!--more-->

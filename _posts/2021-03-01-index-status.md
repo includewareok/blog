@@ -14,6 +14,7 @@ tags:
   - standard
 ---
 
+![visitors](https://visitor-badge.glitch.me/badge?page_id=includewareok.blog.2021-03-01-index-status")
 
 ## Introducción
 Los indices juegan una parte importante de un sistema, impacatando directamente en su performance. En esta sección vamos a analizar el estado de los mismos y sugerir posibles soluciones a problemas comunes. Como comentaria vamos solo a analizar los tipos CLUSTERED INDEX y NONCLUSTERED INDEX
