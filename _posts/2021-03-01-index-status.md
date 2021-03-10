@@ -17,6 +17,7 @@ tags:
 
 ## Introducción
 Los indices juegan una parte importante de un sistema, impacatando directamente en su performance. En esta sección vamos a analizar el estado de los mismos y sugerir posibles soluciones a problemas comunes. Como comentaria vamos solo a analizar los tipos CLUSTERED INDEX y NONCLUSTERED INDEX
+<!--more-->
 
 **:information_source:** Cada vez que creamos una tabla y no aclaramos una Primary Key (PK) o algun indice CLUSTED, la tabla a nivel de SQL Server se crea de tipo HEAP (pila en español), esos datos tienen el orden como si fuera un STACK, en primer dato ingresado es la base y se van “apilando”, esto tiene la ventaja de que es super performance para insert y puede ser una buena idea para tablas que no son acutalizadas y/o consultadas frecuentemente y con bajo volumen de datos.
 {: .notice}

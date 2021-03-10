@@ -1,5 +1,5 @@
 ---
-title: "Como obtener datos de nuestro SQL"
+title: "¿Cómo obtener datos de nuestro SQL?"
 excerpt_separator: "<!--more-->"
 categories:
   - Blog
@@ -13,6 +13,7 @@ tags:
 
 Hace un tiempo escribí como actualizar las reglas del firewall del Azure SQL en [el blog de Victor](https://blog.victorsilva.com.uy/powershell-firewall-azure-sql/). En esta ocación vamos a ver como obtener algunos datos más interesantes.
 
+<!--more-->
 Uno de los desafios a nivel de SQL en particular pero de toda infra en general es la capacidad de preever problemas de capacidad. Para poder hacer eso primero necesitamos saber donde estamos parando.
 
 Lo primero que debemos hacer es instalar el modulo de azure 

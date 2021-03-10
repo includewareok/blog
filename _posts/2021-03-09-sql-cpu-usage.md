@@ -1,5 +1,5 @@
 ---
-title: "Como SQL Server gestiona el CPU"
+title: ¿Cómo SQL Server gestiona el CPU?
 excerpt_separator: "<!--more-->"
 modified: 2021-03-09
 categories:

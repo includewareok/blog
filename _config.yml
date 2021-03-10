@@ -86,6 +86,8 @@ footer:
     - label: "LinedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/felipeschneideruy/"
+    - label: "Visitantes"
+      url: "https://visitor-badge.glitch.me/badge?page_id=includewareok.blog"
 
 defaults:
   # _posts
