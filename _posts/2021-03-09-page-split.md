@@ -3,6 +3,7 @@ title: SQL Server page split
 excerpt_separator: "<!--more-->"
 modified: 2021-03-09
 permalink: /page-split
+classes: wide
 categories:
   - Blog
   - SQL
