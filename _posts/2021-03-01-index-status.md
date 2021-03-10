@@ -31,14 +31,17 @@ Cada base de datos de SQL Server cuenta con varias tablas internas del sistema, 
 
 Vamos a ver los tipos de indices de una base de datos, para eso ejecutamos la siguiente query:
 
-```sql
+``` sql
 USE  NOMBREDELADB --Cambiar por la DB que se quiera comprobar
 GO;
 SELECT DISTINCT(type_desc) 
 FROM sys.indexes i
 ```
+
 El resultado es el siguente:
-||type_desc||
+
+|type_desc|
+|-|
 |CLUSTERED|
 |HEAP|
 |NONCLUSTERED|
@@ -53,7 +56,7 @@ Cuando una tabla no cuenta con un indice CLUSTERED los datos están dispersos de
 ![Imagen-001](/assets/images/2021-03-01-index-status-001.png)
 [Imagen obtenida de la documentación de MS](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-index-design-guide?view=sql-server-ver15#clustered-index-architecture)
 
-```sql
+``` sql
 --Obotener los nombres de las tablas que no tiene indices clustered
 USE  NOMBREDELADB --Cambiar por la DB que se quiera comprobar
 GO;
@@ -73,9 +76,7 @@ El tema de los indices al ser estructuras lógicas de árboles binarios de búsq
 
 Con este [script de Glen Barry](https://www.sqlskills.com/blogs/glenn/category/dmv-queries/) podemos obtener el estado de  fragemtanción los indices y validar que tan correcta es nuestra estrategía de mantenimiento de indices:
 
-```sql
--- Get fragmentation info for all indexes above a certain size in the current database  (Query 60) (Index Fragmentation)
--- Note: This query could take some time on a very large database
+``` sql
 USE  NOMBREDELADB --Cambiar por la DB que se quiera comprobar
 GO;
 SELECT DB_NAME(ps.database_id) AS [Database Name], SCHEMA_NAME(o.[schema_id]) AS [Schema Name],
@@ -90,7 +91,7 @@ INNER JOIN sys.objects AS o WITH (NOLOCK)
 ON i.[object_id] = o.[object_id]
 WHERE ps.database_id = DB_ID()
 AND ps.page_count > 2500
-ORDER BY ps.avg_fragmentation_in_percent DESC OPTION (RECOMPILE);
+ORDER BY ps.avg_fragmentation_in_percent DESC OPTION (RECOMPILE)
 ```
 
 ![Imagen-002](/assets/images/2021-03-01-index-status-002.png)
@@ -111,7 +112,7 @@ Para corregir la fragmentación hay 3 posibles caminos
 * Crear un plan de mantenimiento desde el Managment studio usando los objetos nativos de SQL Server, la desventaja de este camino es que  no tiene inteligencia, no usa el estado de los indices y en general va por todos o los que se le especifique, haciendo que sea o muy intensivo a nivel del sistema o tener que estar constantemente adaptandolo para tener en cuenta los nuevos indices con altos indices de fragmentación.
 * Usar el [scipt de Ola Hallengren](https://ola.hallengren.com/) para hacer un mantenimiento inteligente, por ejemplo:
 
-```sql
+``` sql
 EXECUTE dbo.IndexOptimize
 @Databases = 'USER_DATABASES',
 @FragmentationLow = NULL,
