@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Felipe Schneider"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Me apasionan las bases de datos 🚀 y compatir el conocimiento ❤️"
+  bio    : "Me apasionan las bases de datos 🚀 y compartir lo que voy aprendiendo ❤️"
   links:
     - label: "Twitter"
       icon: "fas fa-fw fa-twitter-square"
