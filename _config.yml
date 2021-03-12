@@ -112,3 +112,5 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+# Google Analytics
+google_analytics: G-SCETLP8B1P
