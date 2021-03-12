@@ -112,7 +112,7 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-ekyll_analytics:
+jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: G-SCETLP8B1P          # Required - replace with your tracking id
     anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking
