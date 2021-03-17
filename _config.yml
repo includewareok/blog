@@ -97,7 +97,7 @@ defaults:
       read_time: true
       share: true
       related: true
-      comments: true
+      comments:
         provider: "disqus"
         disqus:
           shortname: "felipes88"
