@@ -95,12 +95,12 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
+      share: true
+      related: true
       comments: true
         provider: "disqus"
         disqus:
           shortname: "felipes88"
-      share: true
-      related: true
   # _pages
   - scope:
       path: "_pages"
