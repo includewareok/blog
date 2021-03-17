@@ -96,6 +96,9 @@ defaults:
       author_profile: true
       read_time: true
       comments: true
+        provider: "disqus"
+        disqus:
+          shortname: "felipes88"
       share: true
       related: true
   # _pages
