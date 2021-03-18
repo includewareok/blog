@@ -119,6 +119,7 @@ jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: G-SCETLP8B1P          # Required - replace with your tracking id
     anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking
+    
   Matomo:                   # Add, if you want to track with Matomo (former Piwik Analytics)
     url: felipes88.matomo.cloud # Required - url to Matomo installation without trailing /
     siteId: "1"          # Required - replace with your Matomo site id (Write id as string)
