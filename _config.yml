@@ -26,6 +26,9 @@ search: true
 # Build settings
 markdown: kramdown
 remote_theme: "mmistakes/minimal-mistakes@4.22.0"
+minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "default", "dirt", "neon", "mint", "plum" "sunrise"
+locale: es-ES
+search: true
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -101,7 +104,7 @@ defaults:
       comments:
         provider: "disqus"
         disqus:
-          shortname: "felipes88"
+          shortname: felipes88
   # _pages
   - scope:
       path: "_pages"
@@ -124,3 +127,8 @@ jekyll_analytics:
   Matomo:                   # Add, if you want to track with Matomo (former Piwik Analytics)
     url: felipes88.matomo.cloud # Required - url to Matomo installation without trailing /
     siteId: "1"          # Required - replace with your Matomo site id (Write id as string)
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-SCETLP8B1P"
+    anonymize_ip: false # default
