@@ -48,6 +48,7 @@ include:
 #   - vendor/ruby/
 
 # Plugins (previously gems:)
+whitelist: [jekyll-analytics]
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
