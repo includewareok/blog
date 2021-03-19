@@ -1,8 +1,8 @@
 ---
 permalink: /about/
-title: "About"
+title: "Acerca de"
 ---
-HOla, mi nombre es Felipe Schneider y te doy la bienvenida a mi blog.
+Hola, mi nombre es Felipe Schneider y te doy la bienvenida a mi blog.
 
 Hace 12 años que trabajo en el ambiente de TI. Comencé mi camino como analista de calidad de un software llamado t-encuentro escrito en VB6. En esa empresa tuve la oprtunidad de de programar un modulo para comprobar correos de forma async en VB6 :P. Con el tiempo me interesó la infra y trabajando en [Pyxis](www.pyxis.com.uy) tengo la oportunidad de brindar servicios en empresas de diferente porte y muy diversos rubros como ser [UruguayXXI](https://www.uruguayxxi.gub.uy/es/),  [Arkanosoft](www.arkanosoft.com), [Laboratorio Lazar](http://www.lazar.com.uy/inicio) [Ayala](http://ayala.com.uy/), [Endava](https://www.endava.com/),[COCAP](http://cocap.edu.uy/), [INIA](http://inia.uy/) o [Montes del plata](https://montesdelplata.com.uy/). Actualmente estoy dedicado a [SAP Cloud Commerce](https://www.sap.com/index.html) como Senior Azure SQL DBA & Data platform.
 
