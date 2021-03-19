@@ -1,5 +1,5 @@
 ---
-title: ¿Cómo SQL Server gestiona el CPU?
+title: ¿Cómo gestiona SQL Server  el CPU?
 excerpt_separator: "<!--more-->"
 modified: 2021-03-09
 classes: wide
@@ -22,7 +22,7 @@ En el campo de la computación existe lo que se llama jerarquias de memorias. Lo
 
 Esto junto a la capacidad de computo, hace que el CPU sea el recurso más valioso y rápido y por lo tanto el que se debe aprovechas al máximo. Desde la introducción de los sistemas multi proceso y multi usuario, los SO deben organizar de la forma más efectiva posible el uso de ellos. Debido a que SQL Server es un RDBMS, uno de sus componentes se encarga de eso. Se llama internamente SQL Scheduler.
 
-**⚠️** Para este simplificar el ejemplo vamos a suponer un servidor que solo cuenta con un solo core y un solo CPU.
+**⚠️** Para simplificar este el ejemplo vamos a suponer que contamos con un servidor que solo cuenta con un solo core y un solo CPU.
 {: .notice}
 
 
@@ -31,13 +31,14 @@ Internamente el ciclo de vida de una consulta en SQL Server tiene 3 estados posi
 * Suspended
 * Runnable
 
-Una consulta solo puede estar en el estado Running mientras tienga trabajo que pueda ejecutar, en el momento en que la misma tiene que esperar por un recurso (páginas, locks, red, etc) que no están disponibles, la consulta pasa al estado Suspended. La consulta tiene que esperar en este estado hasta que el recurso solicitado este disponible. Luego de esto la consulta es movida al estado Runnable. La consulta se va a quedar en este estado mientras espera que un núcleo este libre y finalmente la consulta vuelve al estado Running. Todas estos cambios de estados son registrados y monitoreados mediante los waits stats internamente.
+![Imagen-002](/assets/images/como-sql-gestiona-el-cpu-002.png)
+
+Una consulta solo puede estar en el estado Running mientras tenga trabajo que pueda ejecutar, en el momento en que la misma tiene que esperar por un recurso (páginas, locks, red, etc) que no están disponibles, la consulta pasa al estado Suspended. La consulta tiene que esperar en este estado hasta que el recurso solicitado este disponible. Luego de esto la consulta es movida al estado Runnable. La consulta se va a quedar en este estado mientras espera que un núcleo este libre, una vez que obtiene acceso a un núcleo la consulta vuelve al estado Running. Todas estos cambios de estados son registrados y monitoreados mediante los waits stats internamente.
 
 **:information_source:** Como SQL Server está contruido con un gestión de procesos llamado [Cooperative Scheduling](https://www.sqlpassion.at/archive/2015/04/13/introduction-to-wait-statistics-in-sql-server/) (SQL Server bypassea el agendado preventivo del SO y agenda sus hilos el mismo) y tiene definido su Quantum (tiempo máximo de una consulta en un procesador,  en un procesador de 2Ghz son 2 x 10 a las 6 instrucciones por  milisegundo) en 4ms. Después de ese tiempo, la consulta cede voluntariamente el CPU y se cambia al estado Runnable. Este tipo de comportamientos es registrado por SQL Server como un tipo de espera SOS_SCHEDULER. Por más información se puede [leer este](https://sqlperformance.com/2014/02/sql-performance/knee-jerk-waits-sos-scheduler-yield) o [este articulo](https://www.sqlskills.com/help/waits/sos_scheduler_yield/) de Paul Randall.
 {: .notice--info}
 
 
-![Imagen-002](/assets/images/como-sql-gestiona-el-cpu-002.png)
 
 Vamos a ver un ejemplo práctico. Supongamos que llega la consulta de Felipe:
 
