@@ -10,9 +10,7 @@ categories:
   - SQL Server
   - internals
 tags:
-  - Post Formats
-  - readability
-  - standard
+  - internals
 ---
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=includewareok.blog.2021-03-09-page-split")
@@ -22,5 +20,5 @@ Un `page split` ocurre cuando no hay más espacio libre en una página de datos 
 <!--more-->
 
 **:information_source:** 
-Esto es un WIP y se actualizará pronto.
+Esto es un WIP y se actualizará pronto. Hoy es 22 de marzo 2021
 {: .notice}
