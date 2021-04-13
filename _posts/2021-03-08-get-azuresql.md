@@ -45,6 +45,7 @@ $resourceGroupName = "resourceGroupName"
 ```
 
 Una vez que tenemos esto definido podemos ir a obtener nuestros datos, pero antes vamos a crear una [propiedad calculada](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.1#example-10--create-calculated-properties-for-each-inputobject) para pasar de bytes a GB:
+
 ```powershell
 $size = @{label="Size(GB)";expression={$_.MaxSizeBytes/1GB}}
 Get-AzSqlDatabase -ServerName $serverName -DatabaseName $dbName -ResourceGroupName $resourceGroupName | select Capacity, Edition, $size, MaxSizeBytes
