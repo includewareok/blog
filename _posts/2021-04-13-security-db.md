@@ -89,7 +89,6 @@ La base de la seguridad informática como la conocemos está formada por el tri�
 
 El mayor problema relacionado a la seguridad en las bases de datos es que siempre pensamos en el sistema activo. Lo bueno de este modelo es que podemos abordar los diferentes desafíos o partes del sistema desde diferentes ángulos. Podemos entonces dejar de ver un respaldo como algo sin problemas y pensar en la **Confidencialidad** ya que puede quedar comprometida si nuestro respaldo está en una carpeta que todos tiene permiso de escritura, o si al intentar hacer una recuperación alguien lo borro vemos como nuestra  solución puede tener problemas de **Disponibilidad**. 
 
-
- ## Conclusiones
+## Conclusiones
 
 La seguridad no es algo que debe ser tomado de forma trivial y debe ser visto desde varios ángulos. Es importante construir sistemas que cuenten con varias capaz para asegurar el cumplimiento de la tríada **CIA**. Es importante por lo tanto tener en cuenta todo el ciclo de vida de nuestros datos y no solo los que se encuentran dentro de una base de datos. Ningún sistema es infalible, pero adoptando estas medidas, estamos reduciendo los vectores de ataque, desincentivando a usuarios maliciosos o hackers con menor nivel de conocimiento técnico. 
