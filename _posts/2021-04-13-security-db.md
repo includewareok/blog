@@ -6,17 +6,17 @@ classes: wide
 comments: true
 categories:
   - "security"
-  - "data masking"
-  - database
 tags:
   - "security"
+  - "data masking"
+  - database
 ---
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=includewareok.blog.2021-04-13-seguridad")
 
 ## Introducción
 
-Con la llegada de la pandemia en 2020 muchas cosas cambiaron para todos, la gran mayoría empezó a trabajar desde su casa, aprendimos nuevos términos como `burbuja social`, `aplanar la curva`. El nuevo accesorio de todo el mundo paso a ser una máscara facial para protegernos y proteger a los demás, también dispositivo como caretas o ropa descartable y volvimos a lavarnos las manos y lavar los productos cada vez que volvemos a nuestro hogares. Lo que no cambio, es más, empeoró son los ciber ataques. Suplantación de identidad, robo de datos sensibles por nombrar algunos. Entonces cabe plantearnos esta pregunta, ¿No será necesario que nuestros datos también uses sistemas para protegerse? ¿ Cúales son? Y por último, ¿Por qué no enmascarar nuestros datos? 
+Con la llegada de la pandemia en 2020 muchas cosas cambiaron para todos, la gran mayoría empezó a trabajar desde su casa, aprendimos nuevos términos como `burbuja social`, `aplanar la curva`. El nuevo accesorio de todo el mundo paso a ser una máscara facial para protegernos y proteger a los demás, también dispositivo como caretas o ropa descartable y volvimos a lavarnos las manos y lavar los productos cada vez que volvemos a nuestro hogares. Lo que no cambio, es más, empeoró son los ciber ataques. Suplantación de identidad, robo de datos sensibles por nombrar algunos. Entonces cabe plantearnos esta pregunta, ¿No será necesario que nuestros datos también uses sistemas para protegerse? ¿Cúales son? Y, por último, ¿Por qué no enmascarar nuestros datos? 
 <!--more-->
 
 ## El nuevo petróleo
@@ -35,7 +35,7 @@ De igual forma que en los casos anteriores, no podemos dejar nuestros datos flot
 
 Se entiende por **security at rest** todos datos que se encuentran en un lugar. Esto pueden ser bien los archivos de transacciones de una base de datos, un almacén de datos (`lago de datos` o simples carpetas tipo `storage account` o `S3`) , las carpetas bien pueden tener archivos con datos en crudo de un [proceso ETL]({% post_url 2021-03-22-etl %}) o los respaldos de un motor. 
 
-Para este tipo de problemas, en general nos enfocamos en `RBAC` o `ACLs` para dar o quitar permisos para las carpetas de respaldos o de datos intermedios. Para los archivos de la base de datos, se utiliza **TDE**, por sus siglas en inlgés que significa _Transparent Data Encryption_ y en el caso de [SQL Server](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-ver15) el cifrado se hace a nivel de las páginas de datos, esto también se puede aplicar a nivel de respaldos y lo que debemos proteger es el certificado con el cual hicimos el cifrado para poder hacer una restauración de dicho respaldo. Esto que parece bastante simple, pero por ejemplo para la otro motor famoso como [PostgrSQL](https://www.highgo.ca/2020/12/14/rise-and-fall-for-an-expected-feature-in-postgresql-transparent-data-encryption/) es algo que siguen trabajando porque no hay un acuerdo común entre los principales lideres de dicha comunidad.
+Para este tipo de problemas, en general nos enfocamos en `RBAC` o `ACLs` para dar o quitar permisos para las carpetas de respaldos o de datos intermedios. Para los archivos de la base de datos, se utiliza **TDE**, por sus siglas en inlgés que significa _Transparent Data Encryption_ y en el caso de [SQL Server](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-ver15) el cifrado se hace a nivel de las páginas de datos, esto también se puede aplicar a nivel de respaldos y lo que debemos proteger es el certificado con el cual hicimos el cifrado para poder hacer una restauración de dicho respaldo. Esto que parece bastante simple, pero por ejemplo para otro motor famoso como [PostgrSQL](https://www.highgo.ca/2020/12/14/rise-and-fall-for-an-expected-feature-in-postgresql-transparent-data-encryption/) es algo que siguen trabajando porque no hay un acuerdo común entre los principales lideres de dicha comunidad.
 
 ### Securiry at transit
 
