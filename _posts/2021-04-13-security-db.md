@@ -1,7 +1,7 @@
 ---
 title: "En tiempos de pandemia, tus datos también deberían usar máscara"
 excerpt_separator: "<!--more-->"
-modified: 2021-04-12
+modified: 2021-04-13
 classes: wide
 comments: true
 categories:
@@ -29,7 +29,7 @@ Por lo valioso del recurso en sí, es que nadie deja a su voluntad una cañería
 
 ## Tipos de seguridad
 
-De igual forma que en los casos anteriores, no podemos dejar nuestros datos flotando en el éter de la red de redes liberados a su suerte. Tenemos entonces que preocuparnos de los datos en sus 2 estados. Cuando está  **viajando en una tubería** se llama _security at transit_ y cuando está en un **depositada en un tanque** se llama _security at rest_
+De igual forma que en los casos anteriores, no podemos dejar nuestros datos flotando en el éter de la red de redes liberados a su suerte. Tenemos entonces que preocuparnos de los datos en sus 2 estados. Cuando está  **viajando en una tubería** se llama _security at transit_ y cuando está en un **depositada en un tanque** se llama _security at rest_.
 
 ### Securiry at rest
 
